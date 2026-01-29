@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UGODY.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaf4054673a48a1e71eb876552f8fe6bd50dca6d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95e68614f15f32901abdc5760d60667963726511")]
 [assembly: System.Reflection.AssemblyProductAttribute("UGODY.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UGODY.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
