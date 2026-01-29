@@ -1,0 +1,12 @@
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\bin\Release\net8.0\UGODY.Core.deps.json
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\bin\Release\net8.0\UGODY.Core.dll
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\bin\Release\net8.0\UGODY.Core.pdb
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\UGODY.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\UGODY.Core.AssemblyInfoInputs.cache
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\UGODY.Core.AssemblyInfo.cs
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\UGODY.Core.csproj.CoreCompileInputs.cache
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\UGODY.Core.sourcelink.json
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\UGODY.Core.dll
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\refint\UGODY.Core.dll
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\UGODY.Core.pdb
+C:\Users\bohda\OneDrive\__PKOBP__\GIT\UGODY\UGODY\backend\UGODY.Core\obj\Release\net8.0\ref\UGODY.Core.dll
