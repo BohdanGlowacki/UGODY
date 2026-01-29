@@ -20,4 +20,11 @@
     <ProjectReference Include="..\UGODY.Infrastructure\UGODY.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- Copy tessdata directory to output directory -->
+    <Content Include="tessdata\**\*">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

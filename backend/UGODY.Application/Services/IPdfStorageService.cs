@@ -5,6 +5,7 @@ namespace UGODY.Application.Services;
 public interface IPdfStorageService
 {
     Task<PdfFile?> GetByIdAsync(int id, CancellationToken cancellationToken = default);
+    Task<PdfFile?> GetByHashAsync(string hash, CancellationToken cancellationToken = default);
     Task<byte[]> GetFileContentAsync(int id, CancellationToken cancellationToken = default);
     Task<bool> ExistsByHashAsync(string hash, CancellationToken cancellationToken = default);
     Task<PdfFile> SaveAsync(PdfFile pdfFile, CancellationToken cancellationToken = default);

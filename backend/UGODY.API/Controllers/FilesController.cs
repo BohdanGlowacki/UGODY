@@ -160,23 +160,52 @@ public class FilesController : ControllerBase
             var scannedFiles = await _fileScannerService.ScanDirectoryAsync(scanDirectory, cancellationToken);
 
             var newFilesCount = 0;
+            var ocrQueuedCount = 0;
+            var messages = new List<string>();
+
             foreach (var scannedFile in scannedFiles)
             {
-                var exists = await _pdfStorageService.ExistsByHashAsync(scannedFile.Hash, cancellationToken);
-                if (!exists)
+                var existingFile = await _pdfStorageService.GetByHashAsync(scannedFile.Hash, cancellationToken);
+                
+                if (existingFile == null)
                 {
+                    // New file - save and queue for OCR
                     var savedFile = await _pdfStorageService.SaveAsync(scannedFile, cancellationToken);
                     _ocrQueueService.EnqueuePdfFile(savedFile.Id);
                     newFilesCount++;
-                    _logger.LogInformation("Added new file: {FileName} (ID: {Id})", savedFile.FileName, savedFile.Id);
+                    var message = $"Dodano nowy plik: {savedFile.FileName} (ID: {savedFile.Id}) - OCR w kolejce";
+                    messages.Add(message);
+                    _logger.LogInformation(message);
+                }
+                else
+                {
+                    // File exists - check if OCR is needed
+                    var hasCompletedOcr = existingFile.OcrResults
+                        .Any(r => r.ProcessingStatus == Core.Entities.ProcessingStatus.Completed);
+                    
+                    if (!hasCompletedOcr)
+                    {
+                        // File exists but doesn't have completed OCR - queue for OCR
+                        _ocrQueueService.EnqueuePdfFile(existingFile.Id);
+                        ocrQueuedCount++;
+                        var message = $"Rozpoczęto OCR dla pliku: {existingFile.FileName} (ID: {existingFile.Id})";
+                        messages.Add(message);
+                        _logger.LogInformation(message);
+                    }
                 }
             }
+
+            var summaryMessage = $"Skanowanie zakończone. Znaleziono {scannedFiles.Count} plików, " +
+                $"dodano {newFilesCount} nowych plików, " +
+                $"rozpoczęto OCR dla {ocrQueuedCount} istniejących plików bez OCR.";
 
             return Ok(new ScanResponse
             {
                 ScannedFilesCount = scannedFiles.Count,
                 NewFilesCount = newFilesCount,
-                Message = $"Scan completed. Found {scannedFiles.Count} files, {newFilesCount} new files added."
+                OcrQueuedCount = ocrQueuedCount,
+                Message = summaryMessage,
+                Details = messages
             });
         }
         catch (Exception ex)
@@ -220,5 +249,7 @@ public class ScanResponse
 {
     public int ScannedFilesCount { get; set; }
     public int NewFilesCount { get; set; }
+    public int OcrQueuedCount { get; set; }
     public string Message { get; set; } = string.Empty;
+    public List<string> Details { get; set; } = new();
 }

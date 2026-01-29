@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\backend\\UGODY.Core\\UGODY.Core.csproj": {}
+    "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\UGODY\\backend\\UGODY.Core\\UGODY.Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\backend\\UGODY.Core\\UGODY.Core.csproj": {
+    "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\UGODY\\backend\\UGODY.Core\\UGODY.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\backend\\UGODY.Core\\UGODY.Core.csproj",
+        "projectUniqueName": "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\UGODY\\backend\\UGODY.Core\\UGODY.Core.csproj",
         "projectName": "UGODY.Core",
-        "projectPath": "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\backend\\UGODY.Core\\UGODY.Core.csproj",
+        "projectPath": "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\UGODY\\backend\\UGODY.Core\\UGODY.Core.csproj",
         "packagesPath": "C:\\Users\\bohda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\backend\\UGODY.Core\\obj\\",
+        "outputPath": "C:\\Users\\bohda\\OneDrive\\__PKOBP__\\GIT\\UGODY\\UGODY\\backend\\UGODY.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

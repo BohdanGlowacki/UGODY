@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UGODY.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaf4054673a48a1e71eb876552f8fe6bd50dca6d")]
 [assembly: System.Reflection.AssemblyProductAttribute("UGODY.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UGODY.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

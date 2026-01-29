@@ -23,7 +23,8 @@ public class OcrProcessingService : BackgroundService, IOcrQueueService
     public void EnqueuePdfFile(int pdfFileId)
     {
         _processingQueue.Enqueue(pdfFileId);
-        _logger.LogInformation("Enqueued PDF file ID: {PdfFileId} for OCR processing", pdfFileId);
+        _logger.LogInformation("Enqueued PDF file ID: {PdfFileId} for OCR processing. Queue size: {QueueSize}", 
+            pdfFileId, _processingQueue.Count);
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -39,17 +40,20 @@ public class OcrProcessingService : BackgroundService, IOcrQueueService
                     using var scope = _serviceProvider.CreateScope();
                     var ocrService = scope.ServiceProvider.GetRequiredService<IOcrService>();
 
-                    _logger.LogInformation("Processing OCR for PDF file ID: {PdfFileId}", pdfFileId);
+                    _logger.LogInformation("Starting OCR processing for PDF file ID: {PdfFileId}. Remaining in queue: {QueueSize}", 
+                        pdfFileId, _processingQueue.Count);
                     await ocrService.ProcessPdfAsync(pdfFileId, stoppingToken);
-                    _logger.LogInformation("Completed OCR processing for PDF file ID: {PdfFileId}", pdfFileId);
+                    _logger.LogInformation("Successfully completed OCR processing for PDF file ID: {PdfFileId}", pdfFileId);
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error processing OCR for PDF file ID: {PdfFileId}", pdfFileId);
+                    _logger.LogError(ex, "Error processing OCR for PDF file ID: {PdfFileId}. Error: {ErrorMessage}", 
+                        pdfFileId, ex.Message);
                 }
             }
             else
             {
+                // Only log when queue is empty if it's been a while (to avoid spam)
                 await Task.Delay(1000, stoppingToken); // Wait 1 second before checking again
             }
         }
